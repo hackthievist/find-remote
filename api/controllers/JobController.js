@@ -9,8 +9,12 @@ module.exports = {
 	async create(req, res) {
     try {
       const data = req.body;
-      console.log(data);
       const job = await Job.create(data);
+      const users = await User.find({ isDeleted: false });
+      users.forEach(async (user) => {
+        const emailPayload = { email: user.email, type: 'new-opening'}
+        await EmailService.sendEmail(emailPayload);
+      });
       return res.status(201).send({ message: 'Job Created', data: job });
     } catch (err) {
       return { responseCode: 400, err };

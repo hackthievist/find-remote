@@ -16,14 +16,14 @@ module.exports = {
       type: 'string',
       required: true,
     },
-    organization: {
+    companyName: {
       type: 'string',
       required: true,
     },
     role: {
       type: 'string',
     },
-    salary: {
+    link: {
       type: 'string',
     },
     status: {
@@ -32,6 +32,12 @@ module.exports = {
     },
     location: {
       type: 'json',
+    },
+    category: {
+      type: 'string',
+    },
+    level: {
+      type: 'string',
     },
     isDeleted: {
       type: 'boolean',

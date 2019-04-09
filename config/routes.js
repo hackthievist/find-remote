@@ -57,6 +57,16 @@ module.exports.routes = {
     action: 'delete',
   },
 
+  'POST /user': {
+    controller: 'UserController',
+    action: 'subscribe',
+  },
+
+  'DELETE /user': {
+    controller: 'UserController',
+    action: 'unsubscribe',
+  },
+
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
